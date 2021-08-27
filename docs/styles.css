@@ -1,0 +1,114 @@
+#cssImageBody {
+  margin: 16px;
+}
+
+#cssImageContainer {
+  display: flex;
+  justify-content: center;
+}
+
+#snippetsContainer {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+
+#copyHtmlSnippet,
+#copyCSSSnippet {
+  cursor: pointer;
+}
+
+#snippets {
+  margin-bottom: 8px;
+}
+
+.clipboardIcon {
+  margin-left: 4px;
+}
+
+#snippet-titles > div {
+  width: 50%;
+  display: flex;
+  justify-content: center;
+  margin-bottom: 8px;
+}
+
+.snippetCopied {
+  color: #008000;
+}
+
+#imageInput {
+  margin-top: 8px;
+}
+.snippet {
+  margin-left: 16px;
+  margin-bottom: 8px;
+}
+
+#snippets-header {
+  display: flex;
+  justify-content: center;
+  margin-bottom: 16px;
+}
+
+body {
+  margin: 0;
+}
+
+#pageHeader {
+  margin: 0px 0px 8px 0px;
+  background-color: #681299;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 8px;
+}
+
+.d-flex {
+  display: flex;
+}
+
+.fs-35 {
+  font-size: 35px;
+}
+
+.justify-content-between {
+  justify-content: space-between;
+}
+
+.justify-content-evenly {
+  justify-content: space-evenly;
+}
+
+.w-25 {
+  width: 25%;
+}
+.loader.show {
+  border: 5px solid #f3f3f3;
+  border-radius: 50%;
+  border-top: 5px solid #3498db;
+  width: 20px;
+  height: 20px;
+  -webkit-animation: spin 2s linear infinite; /* Safari */
+  animation: spin 2s linear infinite;
+  margin: 16px;
+}
+
+/* Safari */
+@-webkit-keyframes spin {
+  0% {
+    -webkit-transform: rotate(0deg);
+  }
+  100% {
+    -webkit-transform: rotate(360deg);
+  }
+}
+
+@keyframes spin {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
+}
