@@ -18,17 +18,8 @@ class Image2CSSConverter{
         });
     }
 
-    get imgStyleSheet(){
-        // return this.imgStyleEl.sheet;
-        return document.getElementById('cssImgStyles');
-    }
-
     async render(selectedFile){
-        this.cssString = '';
-        const pixelRowRule = '.pixelRow { height: 1px !important; display: flex; justify-content: space-between;}';
-        const pixelRule = '.pixel { width: 1px !important; height: 1px !important;}';
-        this.cssString += pixelRowRule;
-        this.cssString += pixelRule;
+        this.cssString = '.pixelRow { height: 1px !important; display: flex; justify-content: space-between;} .pixel { width: 1px !important; height: 1px !important;}';
         this.loader.classList.add('show');
         await this.initImgCanvasCtx(selectedFile);
     }
@@ -60,16 +51,14 @@ class Image2CSSConverter{
                     pixelDiv.id = pixelId;
                     pixelDiv.style.backgroundColor = self.rgbToHex(pixel.r,pixel.g,pixel.b);
                     pixelDiv.style.opacity = (pixel.a / 2.56) / 100;
-
-                    // self.cssString += `#${pixelId} {background-color: ${self.rgbToHex(pixel.r,pixel.g,pixel.b)};}`;
-                    // self.cssString += `#${pixelId} {opacity: ${(pixel.a / 2.56) / 100};}`;
+                    self.cssString += `#${pixelId} {background-color: ${self.rgbToHex(pixel.r,pixel.g,pixel.b)};}`;
+                    self.cssString += `#${pixelId} {opacity: ${(pixel.a / 2.56) / 100};}`;
                     pixelDiv.classList.add('pixel');
                     pixelRowDiv.append(pixelDiv);
                 }
                 div.append(pixelRowDiv);
             }
             self.cssImageBody.append(div);
-            self.imgStyleSheet.innerHTML = self.cssString;
             self.loader.classList.remove('show');
             resolve();
         });
